@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\Beneficiare;
 use App\Donateur;
 use App\User;
+use GuzzleHttp\Psr7\Request as Psr7Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
 
 class CompteController extends Controller
 {
@@ -52,10 +53,9 @@ class CompteController extends Controller
             'adresse' => ['required'],
             'email' => ['required'],
             'password' => ['required'],
-            ]);
-        
+        ]);
+
         $user = User::create([
-            'role' => $request->input('role'),
             'nom' => $request->input('nom'),
             'prenom' => $request->input('prenom'),
             'pays' => $request->input('pays'),
@@ -65,20 +65,22 @@ class CompteController extends Controller
             'telephone' => $request->input('telephone'),
             'adresse' => $request->input('adresse'),
             'email' => $request->input('email'),
-            'password' => $request->input('password'),
+            'password' => Hash::make($request->input('password')),
+            'role' => $request->input('role'),
         ]);
+
         if($user->role == 'donateur')
         {
             $donateur=new Donateur ;
             $donateur->user_id=$user->id;
             $donateur->save();
-            return route('home');
+            return redirect()->route('home');
         }
         else if( $user->role == 'beneficiare'){
             $beneficiare=new Beneficiare ;
             $beneficiare->user_id=$user->id;
             $beneficiare->save();
-            return route('home');
+            return redirect()->route('home');
         }
     }
 

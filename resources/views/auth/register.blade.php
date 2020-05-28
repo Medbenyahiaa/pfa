@@ -235,6 +235,9 @@ border-bottom-left-radius: 1.5rem;
                                                 </div>
                                             </div>
                                         </div>
+                                    </form>
+                                    <form method="POST" action="{{ route('compte.store') }}">
+                                        @csrf
                                         <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                             <h3  class="register-heading">Entre autant q'un beneficiare</h3>
                                             <div class="row register-form">
@@ -292,7 +295,56 @@ border-bottom-left-radius: 1.5rem;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email *"/>
+                                                        @error('email')
+                                                            <span class="invalid-feedback" role="alert">
+                                                               <strong>{{ $message }}</strong>
+                                                            </span>
+                                                       @enderror
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input id="telephone" type="text" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{ old('telephone') }}" required autocomplete="telephone" autofocus placeholder="Telephone *"/>
+                                                        @error('telephone')
+                                                          <span class="invalid-feedback" role="alert">
+                                                               <strong>{{ $message }}</strong>
+                                                          </span>
+                                                       @enderror
+                                                    </div>
+            
+                                                    <div class="form-group">
+                                                        <input id="adresse" type="text" class="form-control @error('adresse') is-invalid @enderror" name="adresse" value="{{ old('adresse') }}" required autocomplete="adresse" autofocus placeholder="Adresse *"/>
+                                                        @error('adresse')
+                                                          <span class="invalid-feedback" role="alert">
+                                                               <strong>{{ $message }}</strong>
+                                                          </span>
+                                                       @enderror
+                                                    </div>
+                                                    
+                                                    <div class="form-group">
+                                                        <input  id="ville" type="text" class="form-control @error('ville') is-invalid @enderror" name="ville" value="{{ old('ville') }}" required autocomplete="ville" autofocus placeholder="Ville *"  />
+                                                     @error('ville')
+                                                        <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                       </span>
+                                                     @enderror
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input id="img" type="text" class="form-control @error('img') is-invalid @enderror" name="img" value="{{ old('img') }}" required autocomplete="img" autofocus placeholder="image *" >
+                                                     @error('img')
+                                                       <span class="invalid-feedback" role="alert">
+                                                       <strong>{{ $message }}</strong>
+                                                       </span>
+                                                     @enderror
+                                                    </div>
+                                                    <button type="submit" class="btnRegister" >
+                                                        {{ __('Register') }}
+                                                    
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

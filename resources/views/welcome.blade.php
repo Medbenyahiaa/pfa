@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{mix('/css/app.css')}}">
+        <link rel="stylesheet" href="{{mix('/css/theme.css')}}">
 
         <title>Help Together</title>
 
@@ -11,13 +13,10 @@
 
         <!-- Styles -->
         <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
+           html, body {
+                height: 100%;
+                background-repeat: no-repeat;
+                 background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
             }
 
             .full-height {
@@ -49,7 +48,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #fbf7ff;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -96,5 +95,6 @@
                 </div>
             </div>
         </div>
+        <script src="{{ mix('/js/app.js')}}"></script>
     </body>
 </html>

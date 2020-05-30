@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="{{mix('/css/app.css')}}">
         <link rel="stylesheet" href="{{mix('/css/theme.css')}}">
 
-        <title>Help Together</title>
+        <title>Stay At Home </title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -80,7 +80,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Help Together
+                    Stay At Home
                 </div>
 
                 <div class="links">

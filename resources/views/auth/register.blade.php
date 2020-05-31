@@ -102,7 +102,7 @@
 @endsection
 @section('content')
       <div class="card-body">
-        <form method="POST" action="{{ route('compte.store') }}">
+        <form method="POST" action="{{ route('compte.storeC' , ['role' => "donateur"]) }}">
           @csrf
           <div class="container register">
             <div class="row">
@@ -135,7 +135,7 @@
                                            </span>
                                       @enderror
                                 </div>
-
+                                
                                      <div class="form-group">
                                          <input id="prenom" type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" value="{{ old('prenom') }}" required autocomplete="prenom" autofocus placeholder="Prenom*"/>
                                          @error('prenom')
@@ -226,6 +226,11 @@
                                 </div>
                             </div>
                         </div>
+                    </form>
+
+
+                    <form method="POST" action="{{ route('compte.storeC' , ['role' => "beneficiare"]) }}">
+                        @csrf
                         <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <h3  class="register-heading">Apply as a Hirer</h3>
                             <div class="row register-form">
@@ -334,7 +339,7 @@
 
         </div>
 
-
-        </form>
+    </form>
+        
       </div>
 @endsection('content')

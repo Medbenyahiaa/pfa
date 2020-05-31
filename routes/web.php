@@ -26,3 +26,4 @@ Route::view('/homeAdmin','admin.homeAdmin')->middleware(['auth','admin']);
 Route::view('/homeDonateur','donateur.homeDonateur')->middleware(['auth','donateur']);
 Route::view('/homeBeneficiare','beneficiare.homeBeneficiare')->middleware(['auth','beneficiare']);
 Route::resource('/compte','CompteController');
+Route::post('/compte/{role}' , 'CompteController@storeC')->name('compte.storeC');

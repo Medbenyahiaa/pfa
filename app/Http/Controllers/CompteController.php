@@ -40,9 +40,11 @@ class CompteController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
+    }
+    public function storeC(Request $request , $role)
+    {
         $valide = $request->validate([
-            'role' => ['required'],
             'nom' => ['required'],
             'prenom' => ['required'],
             'pays' => ['required'],
@@ -66,7 +68,7 @@ class CompteController extends Controller
             'adresse' => $request->input('adresse'),
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
-            'role' => $request->input('role'),
+            'role' => $role,
         ]);
 
         if($user->role == 'donateur')

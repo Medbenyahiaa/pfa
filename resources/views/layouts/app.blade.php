@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- <script src=" asset('js/app.js') }}" defer></script> -->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -26,9 +26,6 @@
                 background-repeat: no-repeat;
                  background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
             }
-            
-            
-
     </style>
     
 </head>

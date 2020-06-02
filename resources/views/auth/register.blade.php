@@ -98,6 +98,19 @@
         .btn-round-lg{
           border-radius: 22.5px;
         }
+        #imagePreview {
+            width: 180px;
+            height: 180px;
+            background-position: center center;
+            background-size: cover;
+            -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+            display: inline-block;
+            background-image: url('css/placeholder-profile.jpg');
+        }
+
+        #uploadFile{
+        display: none
+        }
     </style>
 @endsection
 @section('content')
@@ -110,22 +123,16 @@
             <a class="btn btn-primary btn-round-lg btn-lg " href="{{route('login')}}" >{{"Login"}}</a>
         </div>
         <div class="col-md-9 register-right">
-            <form method="POST" action="{{ route('compte.storeC' , ['role' => "donateur"]) }}">
+            <form method="POST" action="{{ route('compte.store') }}">
                 @csrf
-
-                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a  name="role" value="donateur" class="nav-link active @error('role') is-invalid @enderror" id="donateur" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true">Donateur</a>
-                    </li>
-                    <li class="nav-item">
-                        <a   name="role" value="beneficiare"class="nav-link @error('role') is-invalid @enderror" id="beneficiare" data-toggle="tab"  role="tab"  aria-selected="false">Benficiare</a>
-                    </li>
-                </ul>
+                
                 <div class="tab-content" id="myTabContent">
                     
                         <h3 class="register-heading">Apply as a Employee</h3>
                         <div class="row register-form">
                             <div class="col-md-6">
+                                <div id="imagePreview" src="placeholder-profile.jpg" alt="placeholder image goes here"></div>
+                                <input id="uploadFile" type="file" name="image" class="img" />
                                 <div class="form-group">
                                     <input id="nom" type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" value="{{ old('nom') }}" required autocomplete="nom" autofocus placeholder="Nom *"/>
                                     @error('nom')
@@ -215,6 +222,14 @@
                                        </span>
                                     @enderror
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="custom-control custom-radio">
+                                        <label for="donateur">{{"DONATEUR"}} </label>
+                                        <input type="radio" name="role" value="donateur" id="donateur" class="nav-link @error('role') is-invalid @enderror">
+                                        <label for="beneficiare">{{"BENEFICIARE"}} </label>
+                                        <input type="radio" name="role" value="beneficiare" id="beneficiare" class="nav-link @error('role') is-invalid @enderror">
+                                    </div>
+                                </div>
                                 <button type="submit" class="btnRegister" >
                                     {{ __('Register') }}
                                 </button>
@@ -228,4 +243,23 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    document.getElementById("uploadFile").addEventListener('change', function () {
+	var files = !!this.files ? this.files : [];
+        if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+
+        if (/^image/.test( files[0].type)){ // only image file
+            var reader = new FileReader(); // instance of the FileReader
+            reader.readAsDataURL(files[0]); // read the local file
+
+            reader.onloadend = function(){ // set image data as background of div
+			document.getElementById('imagePreview').style.backgroundImage = "url("+this.result+")";
+            }
+        }
+    });
+
+    document.getElementById('imagePreview').addEventListener('click', function () {
+        document.getElementById('uploadFile').click();
+    });
+</script>
 @endsection('content')

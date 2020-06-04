@@ -1,11 +1,10 @@
 @extends('layouts.app')
 @section('CustomCss')
    <style>
-      
       .register-left{
          text-align: center;
          color: #fff;
-         margin-top: 4%;
+         margin-top: 6%;
          }
        .register-left input{
             border: none;
@@ -21,8 +20,8 @@
        }
        .register-right{
             background: #f8f9fa;
-            border-top-left-radius: 10% 50%;
-           border-bottom-left-radius: 10% 50%;
+            border-top-left-radius: 30% 80%;
+           border-bottom-left-radius: 30% 80%;
        }
       .register-left img{
           margin-top: 15%;
@@ -111,6 +110,7 @@
         #uploadFile{
         display: none
         }
+        
     </style>
 @endsection
 @section('content')
@@ -118,8 +118,8 @@
     <div class="row">
         <div class="col-md-3 register-left">
             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-            <h3>Welcome</h3>
-            <p>You are 30 seconds away from earning your own money!</p>
+            <h3>Bienvenue</h3>
+            <p>“Rester chez soi”</p>
             <a class="btn btn-primary btn-round-lg btn-lg " href="{{route('login')}}" >{{"Login"}}</a>
         </div>
         <div class="col-md-9 register-right">
@@ -128,7 +128,7 @@
                 
                 <div class="tab-content" id="myTabContent">
                     
-                        <h3 class="register-heading">Apply as a Employee</h3>
+                        <h3 class="register-heading">Sign In</h3>
                         <div class="row register-form">
                             <div class="col-md-6">
                                 <div id="imagePreview" src="placeholder-profile.jpg" alt="placeholder image goes here"></div>
@@ -180,7 +180,7 @@
                                             <span> Femme</span>
                                         </label>
                                         <label class="radio inline">
-                                            <input type="radio" value="homme" id="homme" name="sexe" class="radio inline @error('sexe') is-invalid @enderror" checked>
+                                            <input type="radio" value="homme" id="homme" name="sexe"  class="radio inline @error('sexe') is-invalid @enderror" checked>
                                             <span> Homme</span>
                                         </label>
                                     </div>

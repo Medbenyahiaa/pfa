@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+        <link rel="icon" type="image/png" href="../assets/img/favicon.png">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{mix('/css/app.css')}}">
         <link rel="stylesheet" href="{{mix('/css/theme.css')}}">
+
 
         <title>Stay At Home </title>
 
@@ -68,6 +71,11 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
+                        @if( Auth::user()->role == 'admin' )
+                          <a href="/homeAdmin">Dashboard</a>
+                       @endif
+                       <a href="http://www.covidmaroc.ma/pages/Accueil.aspx">COVIDMAROC</a>
+                       
                     @else
                         <a href="{{ route('login') }}">Login</a>
 

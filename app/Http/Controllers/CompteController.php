@@ -82,6 +82,20 @@ class CompteController extends Controller
             return redirect()->route('home');
         }
     }
+    public function AddAdmin(){
+        request() -> validate([
+            'nom' => ['required'],
+            'prenom' => ['required'],
+            'pays' => ['required'],
+            'ville' => ['required'],
+            'sexe' => ['required'],
+            'img' => ['required'],
+            'telephone' => ['required'],
+            'adresse' => ['required'],
+            'email' => ['required'],
+            'password' => ['required'],
+        ]);
+    }
 
     /**
      * Display the specified resource.

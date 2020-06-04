@@ -21,7 +21,7 @@ class AdminMiddleware
             return $next($request);
         }
         else {
-            return redirect('/home');
+            return redirect('/home')->with('status','tu peux pas acceder a la page admin');
         }
     }
    

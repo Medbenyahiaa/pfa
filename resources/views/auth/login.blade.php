@@ -26,18 +26,20 @@
     * Card component
     */
     .card {
-            background-color: #F7F7F7;
+            background: rgb(0, 0, 0,0,5);
             /* just in case there no content*/
-        padding: 20px 25px 30px;
+        padding:  40px;
         margin: 0 auto 25px;
             margin-top: 50px;
         /* shadows and rounded borders */
-            -moz-border-radius: 2px;
-        -webkit-border-radius: 2px;
-        border-radius: 2px;
-        -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-        -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 500px;
+            box-sizing: border-box;
+            position: absolute;
+            
         }
 
         .profile-img-card {

@@ -6,6 +6,7 @@
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     @yield('title')
@@ -29,10 +30,10 @@
       -->
       <div class="logo">
         <a href="#" class="simple-text logo-mini" style="">
-            <!--img src="avatar_2x.png" width="30" height="30" class="d-inline-block align-top"-->
+            <img src="../assets/img/logo.png" width="30" height="30" class="d-inline-block align-top">
         </a>
         <a href="http://127.0.0.1:8000" class="simple-text logo-normal">
-            <strong>COVID19</strong>
+            <strong>COV-AIDE</strong>
         </a>
       </div>
         <div class="sidebar-wrapper" id="sidebar-wrapper">

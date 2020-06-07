@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    
 
 
     <!-- CSRF Token -->
@@ -24,7 +27,9 @@
         html, body {
                 height: 115%;
                 background-repeat: no-repeat;
-                 background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+                 background-image: url("img/covi.png");
+                 -webkit-background-size: cover;
+                 background-size: cover;
             }
     </style>
     
@@ -33,8 +38,11 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+                <a href="#" class="simple-text logo-mini" style="">
+                    <img src="../assets/img/favicon.png" width="30" height="30" class="d-inline-block align-top">
+                </a> 
                 <a class="navbar-brand" href="{{ url('/') }}">
-                     COVID19
+                      COV-AIDE
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

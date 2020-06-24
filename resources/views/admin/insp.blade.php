@@ -8,6 +8,9 @@
 @section('title')
     Users
 @endsection
+@section('titlePage')
+    Users Profile
+@endsection
 
 
 @section('content')
@@ -17,7 +20,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h4 class="card-title"> Users Profile</h4>
+            
             @if (session('status'))
                 <div class="alert alert-success" role="alert">
                   {{ session('status') }}

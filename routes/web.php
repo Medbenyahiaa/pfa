@@ -36,9 +36,23 @@ Route::group(['middleware' => ['auth','admin']], function () {
 
     Route::post('/inscriptionA' , 'Admin\CompteController@AddAdmin');
 });
+Route::group(['middleware' => ['auth','beneficiare']], function () {
+    Route::get('/announce', function () {
+        return view('beneficiare.announce');
+    });
 
+    Route::get('/homeBeneficiare', 'Beneficiare\HomeBeneficiareController@pubu');
+});
 
+Route::group(['middleware' => ['auth','donateur']], function () {
+    Route::get('/homeDonateur', function () {
+        return view('donateur.homeDonateur');
+    });
 
-Route::view('/homeDonateur','donateur.homeDonateur')->middleware(['auth','donateur']);
-Route::view('/homeBeneficiare','beneficiare.homeBeneficiare')->middleware(['auth','beneficiare']);
+    //Route::get('/homeDonateur', 'Donateur\HomeDonateurController@pubu');
+});
+Route::view('/about','about')->name('about');
+
+//Route::view('/homeDonateur','donateur.homeDonateur')->middleware(['auth','donateur']);
+//Route::view('/homeBeneficiare','beneficiare.homeBeneficiare')->middleware(['auth','beneficiare']);
 Route::resource('/compte','CompteController');

@@ -1,8 +1,15 @@
 @extends('layouts.master')
-
+@section('Content-fluid')
+<div class="panel-header panel-header-sm">
+  
+</div>
+@endsection
 
 @section('title')
     Edit-Users
+@endsection
+@section('titlePage')
+       Edit Users
 @endsection
 
 @section('content')
@@ -10,9 +17,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    <h3> Edit User</h3>
-                </div>
+                
                 <div class="card-body">
                    <div class="row">
                        <div class="col-md-6">

@@ -5,7 +5,7 @@
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Favicon-->
-	<link rel="shortcut icon" href="../assets/img/logo.png">
+	<link rel="shortcut icon" href="../img/fav.png">
 	<!-- Author Meta -->
 	<meta name="author" content="colorlib">
 	<!-- Meta Description -->
@@ -42,7 +42,7 @@
 		<nav class="navbar navbar-expand-lg navbar-light">
 			<div class="container">
 				<a class="navbar-brand" href="/">
-					<img src="img/lo.png" alt="">
+					<img src="img/logo.png" alt="">
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 				 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,16 +51,23 @@
 
 				<div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
 					<ul class="navbar-nav">
-                            <li><a class="active" href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="causes.html">Causes</a></li>
+                            <li><a class="active" href="http://127.0.0.1:8000">Home</a></li>
+					<li><a href="{{route('about')}}">About</a></li>
+							<li><a href="/announce">Annonce</a></li>
                             <li><a href="http://www.covidmaroc.ma/pages/Accueil.aspx">COVIDMAROC</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        @auth
-                            @if( Auth::user()->role == 'admin' )
-                                <li><a href="/homeAdmin">Dashboard</a></li>
-                             @endif
-                            <li class="dropdown">
+							@auth
+							@if( Auth::user()->role == 'beneficiare')
+							<li><a href="/homeBeneficiare">Mon Espace</a></li>
+							@endif
+							@endauth
+							@auth
+							@if( Auth::user()->role == 'donateur')
+							<li><a href="/homeDonateur">Mon Espace</a></li>
+							@endif
+							@endauth
+							<li><a href="contact.html">Contact</a></li>
+							 
+                            <!--li class="dropdown">
                                 <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                                     Pages
                                 </a>
@@ -77,7 +84,37 @@
                                     <a class="dropdown-item" href="blog.html">Blog</a>
                                     <a class="dropdown-item" href="blog-details.html">Blog Details</a>
                                 </div>
-                            </li>
+							</li-->
+							@auth
+							@if( Auth::user())
+								<li class="dropdown">
+									<a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+										<i class="now-ui-icons users_single-02"></i>
+										{{ Auth::user()->nom }}
+									</a>
+									<div class="dropdown-menu " >
+										@auth
+											@if(Auth::user()->role == 'admin')
+											 <a class="dropdown-item" href="/homeAdmin">Dashboard</a>
+											 @endif
+											
+
+										@endauth
+										
+
+										<a class="dropdown-item" href="{{ route('logout') }}"
+										onclick="event.preventDefault();
+														document.getElementById('logout-form').submit();">
+											{{ __('Logout') }}
+										</a>
+										
+		
+										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+											@csrf
+										</form>
+									</div>
+								</li>
+							@endif
                             
                         @else
                             <li><a href="{{ route('login') }}">Login</a></li>
@@ -105,7 +142,7 @@
 					</h1>
 					<h4>Plus de charité.Plus de vie meilleure.</h4>
 					<a href="/login" class="primary-btn">
-						Join us
+						Rejoignez Nous
 						<i class="ti-angle-right ml-1"></i>
 					</a>
 				</div>
@@ -120,15 +157,13 @@
 			<div class="row align-items-end">
 				<div class="col-lg-5">
 					<div class="about_details lite_bg">
-						<h2>We Are A Non-profit
-							Organization </h2>
-						<p class="top_text">
-							Herb saw set gathered herb image lights it wherein without an evenin you're image moving spirit dominion
-						</p>
+						<h2>Aider directement celles
+							et ceux impactés par le virus </h2>
+						
 						<p class="mb-0">
-							Herb, saw set gathered. Herb image, lights it wherein without. Evening you heav image moving spirit dominion
-							place every one firmament said, isn't creeping. Moveth likeness signs. Subdue upon he likeness. Herb, saw set
-							gathered herb image lights it wherein without evening you resigns.
+							Notre site à pour but de mettre en relation des donateurs et les familles défavorisées victimes de covid-19.
+							Collecter des fonds pour une aide d'urgence est indispensbale pour certaines populations qui sont en difficulte financière ne leur permettant pas d'acheter leur nourriture journalière. 
+                            Ces personnes ont perdu leur emploi précaire en raison du confinement ; nous devons les aider.
 						</p>
 						<a href="#" class="primary-btn mt-5">
 							Read more
@@ -182,18 +217,18 @@
 					<div class="feature-item">
 						<i class="fi flaticon-compass"></i>
 						<h4>Faire un Don</h4>
-						<p>Multiply is rule light dominion given midst a living i set every bring also of rule Set light fifth best
-							bearing.</p>
-						<a href="#" class="primary-btn2">Learn more</a>
+						<p>Si tu as besoin d’une main secourable, cherche-la au bout de ton bras. En grandissant, souviens-toi que tu as une autre main ; 
+							la première est là pour t’aider toi-même, la seconde t’a été donnée pour aider les autres.</p>
+						<!--a href="#" class="primary-btn2">Learn more</a-->
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="feature-item">
 						<i class="fi flaticon-desk"></i>
-						<h4>Give Inspiration</h4>
-						<p>Multiply is rule light dominion given midst a living i set every bring also of rule Set light fifth best
-							bearing.</p>
-						<a href="#" class="primary-btn2">Learn more</a>
+						<h4>Donner  L'inspiration</h4>
+						<p>Notre cœur doit être rempli d’amour pour les humains qui sont tous nos frères ; nous devons penser à eux et les aider sans attendre la moindre récompense. Pourquoi? Parce que nous avons déjà la récompense ;
+							 c’est cette dilatation intérieure, cette chaleur, cette inspiration qui nous comblent lorsque nous aimons.</p>
+						<!--a href="#" class="primary-btn2">Learn more</a-->
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">
@@ -202,7 +237,7 @@
 						<h4>Become Bolunteer</h4>
 						<p>Multiply is rule light dominion given midst a living i set every bring also of rule Set light fifth best
 							bearing.</p>
-						<a href="#" class="primary-btn2">Learn more</a>
+						<!--a href="#" class="primary-btn2">Learn more</a-->
 					</div>
 				</div>
 			</div>

@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/fav.png">
+    <link rel="icon" type="image/png" href="../img/fav.png">
     
 
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title> COV-AIDE</title>
 
     <!-- Scripts -->
      <script src="{{ mix('/js/app.js')}}"></script>
@@ -39,11 +39,11 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a href="#" class="simple-text logo-mini" style="">
-                    <img src="../assets/img/favicon.png" width="30" height="30" class="d-inline-block align-top">
+                    <img src="img/logo.png" width="120" height="40" class="d-inline-block align-top">
                 </a> 
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <!--a class="navbar-brand" href="{{ url('/') }}">
                       COV-AIDE
-                </a>
+                </a-->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -57,6 +57,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        <li><a  class="nav-link" href="http://127.0.0.1:8000">Home</a></li>
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

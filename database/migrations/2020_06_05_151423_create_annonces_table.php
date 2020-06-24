@@ -16,11 +16,11 @@ class CreateAnnoncesTable extends Migration
         Schema::create('annonces', function (Blueprint $table) {
             $table->id();
             $table->string('ville');
-            $table->date('date');
+            $table->unsignedBigInteger('beneficiare_id');
+            $table->foreign('beneficiare_id')->references('id')->on('beneficiares')->onDelete('cascade');
             $table->string('sujet');
             $table->text('detail');
             $table->string('photo');
-            $table->string('video');
             $table->timestamps();
         });
     }

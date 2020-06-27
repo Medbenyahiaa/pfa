@@ -53,7 +53,7 @@ Route::group(['middleware' => ['auth','donateur']], function () {
     Route::get('/homeDonateur', function () {
         return view('donateur.homeDonateur');
     });
-
+    Route::get('/mess/{id}','Donateur\HomeDonateurController@messa');
     Route::get('/homeDonateur', 'Donateur\HomeDonateurController@pub');
 });
 Route::view('/about','about')->name('about');

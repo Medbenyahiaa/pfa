@@ -9,7 +9,7 @@
     Users
 @endsection
 @section('titlePage')
-    Mes Annonces
+Bonjour {{Auth::user()->nom}}
 @endsection
 
 
@@ -20,7 +20,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            
+            <h4 class="card-title">Les Annonces Actuelles </h4>
             @if (session('status'))
                 <div class="alert alert-success" role="alert">
                   {{ session('status') }}
@@ -53,7 +53,7 @@
                         <td>{{$row->detail}}</td>
                         <td>{{$row->photo}}</td>
                         <td>
-                            <a href="/#/{{$row->id}}" class="btn btn-success">Contacter</a>
+                            <a href="/mess/{{$row->id}}" class="btn btn-success">Contacter</a>
                         </td>
                     </tr>  
                         @endif

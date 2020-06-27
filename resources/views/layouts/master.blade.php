@@ -304,7 +304,7 @@ S412.45,452.911,408.309,452.911z"/>
             @endauth
             <!---->
             @auth
-            @if (Auth::user()->role == 'beneficiare' || Auth::user()->role == 'donateur')
+            <!--@if (Auth::user()->role == 'beneficiare' || Auth::user()->role == 'donateur')
             <li @if( request()->is('#') ) class="activeItem" @endif>
               <a class="icon-link" href="/#">
                 <svg  class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"  height="33.669px" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -341,7 +341,7 @@ S412.45,452.911,408.309,452.911z"/>
                 
             @endif
             @endauth
-
+                <--->
             
             <!--li>
               <a href="./typography.html">

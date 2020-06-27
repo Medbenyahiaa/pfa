@@ -6,10 +6,10 @@
 @endsection
 
 @section('title')
-    Users
+    Annonce
 @endsection
 @section('titlePage')
-    Mes Annonces
+Bonjour {{Auth::user()->nom}}
 @endsection
 
 
@@ -20,7 +20,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            
+             <h4 class="card-title">Mes Annonces</h4>
             @if (session('status'))
                 <div class="alert alert-success" role="alert">
                   {{ session('status') }}
@@ -31,37 +31,42 @@
             <div class="table-responsive">
               <table class="table">
                 <thead class=" text-primary">
-                      <th>Role</th>
                       <th>Nom</th>
                       <th>Prenom</th>
-                      <th>Pays</th>
-                      <th>Sexe</th>
-                      <th>Telephone</th>
-                      <th>Email</th>
+                      <th>Ville</th>
+                      <th>sujet</th>
+                      <th>detail</th>
+                      <th>image</th>
+                      
                       <th>EDIT</th>
                       <th>DELETE</th>
               </thead>
               <tbody>
-                      @foreach ($errors as $row)
-                          <tr>
-                              <td>{{$row->role}}</td>
-                              <td>{{$row->nom}}</td>
-                              <td>{{$row->prenom}}</td>
-                              <td>{{$row->pays}}</td>
-                              <td>{{$row->sexe}}</td>
-                              <td>{{$row->telephone}}</td>
-                              <td>{{$row->email}}</td>
-                              <td>
-                                  <a href="/role-edit/{{$row->id}}" class="btn btn-success">EDIT</a>
-                              </td>
-                              <td>
-                                  <form action="/role-delete/{{$row->id}}" method="POST">
-                                    {{ csrf_field() }}
-                                    {{method_field('DELETE') }}
-                                    <button type="submit" class="btn btn-danger">DELETE</button>
-                                  </form>
-                              </td>
-                          </tr>
+                      @foreach ($annonces as $row)
+                         @if ($row->valide == true && $benficiare->id == $row->beneficiare_id)
+                         @php
+                            $beneficiare=App\Beneficiare::findOrFail($row->beneficiare_id);
+                            $user=App\User::findOrFail($beneficiare->user_id);
+                        @endphp
+                         <tr>
+                          <td>{{$user->nom}}</td>
+                          <td>{{$user->prenom}}</td>
+                          <td>{{$row->ville}}</td>
+                          <td>{{$row->sujet}}</td>
+                          <td>{{$row->detail}}</td>
+                          <td>{{$row->photo}}</td>
+                          <td>
+                              <a href="/edit/{{$row->id}}" class="btn btn-success">EDIT</a>
+                          </td>
+                          <td>
+                              <form action="/delete/{{$row->id}}" method="POST">
+                                {{ csrf_field() }}
+                                {{method_field('DELETE') }}
+                                <button type="submit" class="btn btn-danger">DELETE</button>
+                              </form>
+                          </td>
+                      </tr>  
+                         @endif
                       @endforeach
               </tbody>
               </table>

@@ -48,7 +48,7 @@
 					<ul class="navbar-nav">
                         <li><a  href="http://127.0.0.1:8000">Home</a></li>
                         <li><a class="active" href="{{route('about')}}">About</a></li>
-                        <li><a href="/homeBeneficiare">Annonce</a></li>
+                        <li><a href="/announce">Annonce</a></li>
                         <li><a href="http://www.covidmaroc.ma/pages/Accueil.aspx">COVIDMAROC</a></li>
                         <li><a href="contact.html">Contact</a></li>
 					@auth
@@ -104,14 +104,13 @@
 	<!--================ End Header Area =================-->
 
 	<!--================ Start top-section Area =================-->
-	<section class="banner-area relative">
-		<div class="overlay overlay-bg"></div>
+	<section class="home-banner-area relative" id="home" data-parallax="scroll"data-image-src="img/about1.png">
+		<div class="overlay-bg overlay"></div>
 		<div class="container">
-			<div class="row justify-content-lg-end align-items-center banner-content">
-				<div class="col-lg-5">
-					<h1 class="text-white">About Us</h1>
-					<p>Aider directement celles
-						et ceux impactés par le virus </p>
+			<div class="row fullscreen justify-content-lg-end">
+				<div class="banner-content col-lg-7">
+					<h1 >About Us</h1>
+					<h4>Au fur et à mesure que la crise s'aggrave. les effets négatifs sur la santé et le bien-être financier des personnes touchées se multiplient. Nous pouvons tous faire notre part pour soutenir les personnes touchées </h4>
 				</div>
 			</div>
 		</div>
@@ -132,10 +131,7 @@
 							Collecter des fonds pour une aide d'urgence est indispensbale pour certaines populations qui sont en difficulte financière ne leur permettant pas d'acheter leur nourriture journalière. 
                                                                                                                                                                      Ces personnes ont perdu leur emploi précaire en raison du confinement ; nous devons les aider.
 						</p>
-						<a href="#" class="primary-btn mt-5">
-							Read more
-							<i class="ti-angle-right ml-1"></i>
-						</a>
+						
 
 						<div class="active-brand-carusel">
 							<div class="single-brand">

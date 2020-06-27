@@ -34,14 +34,19 @@ Route::group(['middleware' => ['auth','admin']], function () {
     Route::delete('/role-delete/{id}','Admin\HomeAdminController@inspdelete');
     Route::get('/inscriptionA' , 'Admin\HomeAdminController@Admin');
 
-    Route::post('/inscriptionA' , 'Admin\CompteController@AddAdmin');
+    Route::post('/inscriptionA' , 'CompteController@AddAdmin');
+    Route::get('/fixpartenaire', 'Admin\HomeAdminController@checkPartenaire');
+    Route::get('/accept/{annonce_id}', 'Admin\HomeAdminController@AddP');
+    Route::get('/delete/{annonce_id}', 'Admin\HomeAdminController@DeleteP');
 });
 Route::group(['middleware' => ['auth','beneficiare']], function () {
-    Route::get('/announce', function () {
-        return view('beneficiare.announce');
-    });
+    
 
-    Route::get('/homeBeneficiare', 'Beneficiare\HomeBeneficiareController@pubu');
+    Route::get('/homeBeneficiare', 'Beneficiare\HomeBeneficiareController@pubu')->name('BenHome');
+    Route::get('/edit/{id}','Beneficiare\HomeBeneficiareController@edit');
+    Route::put('/update/{id}','Beneficiare\HomeBeneficiareControlle@update');
+    Route::delete('/ben_delete/{id}','Beneficiare\HomeBeneficiareControlle@ben_delete');
+    Route::get('/write','Beneficiare\HomeBeneficiareController@annonce');
 });
 
 Route::group(['middleware' => ['auth','donateur']], function () {
@@ -49,10 +54,14 @@ Route::group(['middleware' => ['auth','donateur']], function () {
         return view('donateur.homeDonateur');
     });
 
-    //Route::get('/homeDonateur', 'Donateur\HomeDonateurController@pubu');
+    Route::get('/homeDonateur', 'Donateur\HomeDonateurController@pub');
 });
 Route::view('/about','about')->name('about');
 
 //Route::view('/homeDonateur','donateur.homeDonateur')->middleware(['auth','donateur']);
 //Route::view('/homeBeneficiare','beneficiare.homeBeneficiare')->middleware(['auth','beneficiare']);
 Route::resource('/compte','CompteController');
+Route::resource('/annonce','Annonce\HomeAnnonceController');
+Route::get('/announce', function () {
+    return view('announce');
+});

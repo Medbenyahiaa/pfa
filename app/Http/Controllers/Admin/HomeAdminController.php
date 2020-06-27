@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\annonce;
+use App\Beneficiare;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -38,5 +40,28 @@ class HomeAdminController extends Controller
             'users' => $admins,
         ]);
     }
-   
+    public function checkPartenaire(){
+        $users = user::all();
+        $beneficiares= Beneficiare::all();
+        $annonces= annonce::all();
+
+        return view('admin.validation',[
+            'users' => $users,
+            'beneficiares'=>$beneficiares,
+            'annonces'=>$annonces,
+        ]);
+    }
+        public function AddP($annonce_id){
+            $annonces=annonce::findOrFail($annonce_id);
+            $annonces->valide=true;
+            $annonces->save();
+            return back();
+    }
+
+    public function DeleteP($annonce_id){
+        $annonces=annonce::findOrFail($annonce_id);
+        $annonces->delete();
+        return back();
+    }
+
 }

@@ -131,7 +131,7 @@
 	<!--================ End Header Area =================-->
 
 	<!--================ start banner Area =================-->
-	<section class="home-banner-area relative" id="home" data-parallax="scroll" data-image-src="img/COVI.png">
+	<section class="home-banner-area relative" id="home" data-parallax="scroll" data-image-src="img/aba.png">
 		<div class="overlay-bg overlay"></div>
 		<div class="container">
 			<div class="row fullscreen justify-content-lg-end">
@@ -141,8 +141,8 @@
 						est échange de vie ;et la vie,échange de don.
 					</h1>
 					<h4>Plus de charité.Plus de vie meilleure.</h4>
-					<a href="/login" class="primary-btn">
-						Rejoignez Nous
+					<a href="/register" class="primary-btn">
+						Inscrivez Vous
 						<i class="ti-angle-right ml-1"></i>
 					</a>
 				</div>
@@ -165,10 +165,7 @@
 							Collecter des fonds pour une aide d'urgence est indispensbale pour certaines populations qui sont en difficulte financière ne leur permettant pas d'acheter leur nourriture journalière. 
                             Ces personnes ont perdu leur emploi précaire en raison du confinement ; nous devons les aider.
 						</p>
-						<a href="#" class="primary-btn mt-5">
-							Read more
-							<i class="ti-angle-right ml-1"></i>
-						</a>
+						
 
 						<div class="active-brand-carusel">
 							<div class="single-brand">
@@ -234,9 +231,8 @@
 				<div class="col-lg-4 col-md-6">
 					<div class="feature-item">
 						<i class="fi flaticon-bathroom"></i>
-						<h4>Become Bolunteer</h4>
-						<p>Multiply is rule light dominion given midst a living i set every bring also of rule Set light fifth best
-							bearing.</p>
+						<h4>Être Bénévole</h4>
+						<p> Un bénévole est motivé.c'est souvent ce qui compte le plus. En effet, tout le monde peut devenir bénévole :salarés , étudiant , demandeurs d'emplois , retraités ...Mais on ne s'engage pas pour rien, on investit du temps dans le milieu associatif</p>
 						<!--a href="#" class="primary-btn2">Learn more</a-->
 					</div>
 				</div>
@@ -245,113 +241,10 @@
 	</section>
 	<!--================ End Features Area =================-->
 
-	<!--================ Start Popular Causes Area =================-->
-	<section class="popular-cause-area section-gap-top">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-6">
-					<div class="section-title">
-						<h2><span>Popular</span> Causes</h2>
-					</div>
-				</div>
-			</div>
+	
 
-			<div class="row">
-				<div class="col-lg-4 col-md-6">
-					<div class="card single-popular-cause">
-						<div class="card-body">
-							<figure>
-								<img class="card-img-top img-fluid" src="img/causes/c1.jpg" alt="Card image cap">
-							</figure>
-							<div class="card_inner_body">
-								<div class="tag">Education</div>
-								<h4 class="card-title">Above Hath Fifth Of Open Meat
-									fourth shall meat cattle.</h4>
-								<div class="d-flex justify-content-between raised_goal">
-									<p>Raised: $1533</p>
-									<p><span>Goal: $2500</span></p>
-								</div>
-								<div class="d-flex justify-content-between donation align-items-center">
-									<a href="#" class="primary-btn">donate</a>
-									<p><span class="ti-heart mr-1"></span> 89 Donors</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="card single-popular-cause">
-						<div class="card-body">
-							<figure>
-								<img class="card-img-top img-fluid" src="img/causes/c2.jpg" alt="Card image cap">
-							</figure>
-							<div class="card_inner_body">
-								<div class="tag">Education</div>
-								<h4 class="card-title">Above Hath Fifth Of Open Meat
-									fourth shall meat cattle.</h4>
-								<div class="d-flex justify-content-between raised_goal">
-									<p>Raised: $1533</p>
-									<p><span>Goal: $2500</span></p>
-								</div>
-								<div class="d-flex justify-content-between donation align-items-center">
-									<a href="#" class="primary-btn">donate</a>
-									<p><span class="ti-heart mr-1"></span> 89 Donors</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="card single-popular-cause">
-						<div class="card-body">
-							<figure>
-								<img class="card-img-top img-fluid" src="img/causes/c3.jpg" alt="Card image cap">
-							</figure>
-							<div class="card_inner_body">
-								<div class="tag">Education</div>
-								<h4 class="card-title">Above Hath Fifth Of Open Meat
-									fourth shall meat cattle.</h4>
-								<div class="d-flex justify-content-between raised_goal">
-									<p>Raised: $1533</p>
-									<p><span>Goal: $2500</span></p>
-								</div>
-								<div class="d-flex justify-content-between donation align-items-center">
-									<a href="#" class="primary-btn">donate</a>
-									<p><span class="ti-heart mr-1"></span> 89 Donors</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--================ End Popular Causes Area =================-->
+	
 
-	<!--================ Start callto Area =================-->
-	<section class="callto-area section-gap relative">
-		<div class="overlay overlay-bg"></div>
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8">
-					<p class="top_text">Need your help?</p>
-					<div class="call-wrap mx-auto">
-						<h1>Volunteer Needed At Your Area</h1>
-						<!-- <a id="play-home-video" class="video-play-button" href="https://www.youtube.com/watch?v=_C5vCGB8Xx0">
-									<span></span>
-								</a> -->
-						<p>In that Our I own life unto lights them two appear days rule thing fly main for main cause fowl itself dry
-							from made main cause fowl itself dry.</p>
-						<a href="#" class="primary-btn mt-5">
-							Sign up
-							<i class="ti-angle-right ml-1"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--================ End callto Area =================-->
 
 	<!--================ Start Upcoming Event Area =================-->
 	<section class="upcoming_event_area section-gap-top">
@@ -370,7 +263,7 @@
 						<div class="row align-items-center">
 							<div class="col-lg-6 col-md-6">
 								<figure>
-									<img class="img-fluid w-100" src="img/event/e1.jpg" alt="">
+									<img class="img-fluid w-100" src="img/event/e1.png" alt="">
 									<div class="date">
 										17 Mar
 									</div>
@@ -409,7 +302,7 @@
 						<div class="row align-items-center">
 							<div class="col-lg-6 col-md-6">
 								<figure>
-									<img class="img-fluid w-100" src="img/event/e2.jpg" alt="">
+									<img class="img-fluid w-100" src="img/event/e2.png" alt="">
 									<div class="date">
 										19 May
 									</div>
@@ -626,42 +519,7 @@
 	</section>
 	<!--================ End Instagram Area =================-->
 
-	<!--================ Start CTA Area =================-->
-	<div class="cta-area">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-7">
-					<p class="top_text">Subscribe now</p>
-					<h1>Subscribe Now And Receive The
-						Weekly Newsletter </h1>
-					<div id="mc_embed_signup">
-						<form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-						 method="get">
-							<div class="row align-items-center">
-								<div class="col-lg-5 mb-lg-0 mb-3">
-									<input class="form-control" placeholder="Your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your name'"
-									 required="" type="email" />
-								</div>
-								<div class="col-lg-5 mb-lg-0 mb-3">
-									<input class="form-control" name="EMAIL" placeholder="Your Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email'"
-									 required="" type="email" />
-								</div>
-								<div class="col-lg-2">
-									<button class="primary-btn" type="submit">Subscribe</button>
-									<div style="position: absolute; left: -5000px;">
-										<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text" />
-									</div>
-
-									<div class="info"></div>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--================ End CTA Area =================-->
+	
 
 	<!--================ start footer Area =================-->
 	<footer class="footer">
@@ -672,13 +530,13 @@
 						<div class="single-footer-widget tp_widgets">
 							<h4 class="footer_title large_title">About Us</h4>
 							<p>
-								Do you want to be even more successful? Learn to love learning and growth. The more effort you put into
-								improving your skills, the bigger the payoff you will get. Realize that things will be hard at first, but the
-								rewards will be worth it.
+								Notre site à pour but de mettre en relation des donateurs et les familles défavorisées victimes de covid-19.
+								Collecter des fonds pour une aide d'urgence est indispensbale pour certaines populations qui sont en difficulte financière ne leur permettant pas d'acheter leur nourriture journalière. 
+                            	Ces personnes ont perdu leur emploi précaire en raison du confinement ; nous devons les aider
 							</p>
 							<p>
 									<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright Mohamed Benyahia && Mehdi Boudir All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a >MB</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 							</p>
 						</div>
@@ -688,9 +546,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							<h4 class="footer_title">Quick Links</h4>
 							<ul class="list">
 								<li><a href="#">Home</a></li>
-								<li><a href="#">Shop</a></li>
-								<li><a href="#">Blog</a></li>
-                                <li><a href="#">Product</a></li>
+								<li><a href="/announce">Annonce</a></li>
+								<li><a href="http://www.covidmaroc.ma/pages/Accueil.aspx">COVIDMAROC</a></li>
+                                
                                 
 							</ul>
 						</div>
@@ -701,9 +559,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							<div class="ml-5">
 								<p class="sm-head">
 									<span class="fa fa-location-arrow"></span>
-									Head Office
+									EMSI OFFICE
 								</p>
-								<p>123, Main Street, Your City</p>
+								<p>RABAT, EMSI BOURGRAG,  </p>
 
 								<p class="sm-head">
 									<span class="fa fa-phone"></span>
@@ -718,7 +576,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 									Email
 								</p>
 								<p>
-									free@infoexample.com
+									admin-Covaide@gmail.com
 								</p>
 							</div>
 						</div>

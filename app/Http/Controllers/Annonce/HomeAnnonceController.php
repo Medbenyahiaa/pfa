@@ -7,7 +7,9 @@ use App\annonce;
 use App\Beneficiare;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\Message;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class HomeAnnonceController extends Controller
 {
@@ -60,6 +62,11 @@ class HomeAnnonceController extends Controller
         $annoces->save();
         return redirect()->route('BenHome');
 
+    }
+
+    public function messageDonToBen(Request $request , $ben_mail){
+        Mail::to($ben_mail)->send( new Message(Auth::user()->nom , Auth::user()->prenom , Auth::user()->telephone) );
+        return view('donateur.homeDonateur');
     }
 
     /**

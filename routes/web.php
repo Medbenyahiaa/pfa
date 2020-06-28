@@ -67,4 +67,4 @@ Route::get('/announce', function () {
 });
 
 Route::get('/mess/{id}/{ben_mail}','Donateur\HomeDonateurController@messa');
-Route::post('/messagee/{ben_mail}' , 'HomeAnnonceController@messageDonToBen')->name('messageDonToBen');
+Route::post('/messagee/{ben_mail}' , 'Annonce\HomeAnnonceController@messageDonToBen')->name('messageDonToBen');

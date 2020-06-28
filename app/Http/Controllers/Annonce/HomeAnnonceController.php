@@ -66,7 +66,10 @@ class HomeAnnonceController extends Controller
 
     public function messageDonToBen(Request $request , $ben_mail){
         Mail::to($ben_mail)->send( new Message(Auth::user()->nom , Auth::user()->prenom , Auth::user()->telephone) );
-        return view('donateur.homeDonateur');
+        $annonces = annonce::all();
+        return view('donateur.homeDonateur' , [
+            'annonces' => $annonces,
+        ]);
     }
 
     /**

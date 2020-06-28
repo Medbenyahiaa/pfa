@@ -46,7 +46,6 @@ class CompteController extends Controller
             'pays' => ['required'],
             'ville' => ['required'],
             'sexe' => ['required'],
-            'img' => ['required'],
             'telephone' => ['required'],
             'adresse' => ['required'],
             'email' => ['required'],
@@ -54,19 +53,39 @@ class CompteController extends Controller
             'role' => ['required'],
         ]);
 
-        $user = User::create([
-            'nom' => $request->input('nom'),
-            'prenom' => $request->input('prenom'),
-            'pays' => $request->input('pays'),
-            'ville' => $request->input('ville'),
-            'sexe' => $request->input('sexe'),
-            'img' => $request->input('img'),
-            'telephone' => $request->input('telephone'),
-            'adresse' => $request->input('adresse'),
-            'email' => $request->input('email'),
-            'password' => Hash::make($request->input('password')),
-            'role' => $request->input('role'),
-        ]);
+        if ($request->hasFile('image')) {
+            $image = $request->file('image')->store('imageUsers' , 'public');
+            $user = User::create([
+                'nom' => $request->input('nom'),
+                'prenom' => $request->input('prenom'),
+                'pays' => $request->input('pays'),
+                'ville' => $request->input('ville'),
+                'sexe' => $request->input('sexe'),
+                'img' => $image,
+                'telephone' => $request->input('telephone'),
+                'adresse' => $request->input('adresse'),
+                'email' => $request->input('email'),
+                'password' => Hash::make($request->input('password')),
+                'role' => $request->input('role'),
+            ]);
+        }
+        else{
+            $user = User::create([
+                'nom' => $request->input('nom'),
+                'prenom' => $request->input('prenom'),
+                'pays' => $request->input('pays'),
+                'ville' => $request->input('ville'),
+                'sexe' => $request->input('sexe'),
+                'img' => 'imageUsers/placeholder-profile.jpg',
+                'telephone' => $request->input('telephone'),
+                'adresse' => $request->input('adresse'),
+                'email' => $request->input('email'),
+                'password' => Hash::make($request->input('password')),
+                'role' => $request->input('role'),
+            ]);
+        }
+
+        
 
         if($user->role == 'donateur')
         {

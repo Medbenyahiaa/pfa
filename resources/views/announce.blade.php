@@ -152,27 +152,31 @@
 				</div>
 			</div>
 
-			<div class="content">
-				<div class="first">
-				  <img src="https://i.pravatar.cc/40" alt="" class="profil">
-			
-				  <div class="user-date">
-			
-					  <span class="user">simo</span>
-					  <span class="date"> 2020-o6-17 14:14:00</span>
-			
+			@foreach ($annonces as $annonce)
+
+				@php
+					$ben = App\Beneficiare::findOrFail($annonce->beneficiare_id);
+					$user = App\User::findOrFail($ben->user_id);
+				@endphp
+
+				<div class="content">
+					<div class="first">
+					<img src="{{asset('storage/'.$user->img)}}" width="3%" height="2%" alt="" class="profil">
+				
+					<div class="user-date">
+						<span class="user"> {{$user->nom}} {{$user->prenom}} </span>
+						<span class="date"> {{$annonce->created_at}}</span>
 					</div>
 				</div>
 			
 				<div class="body">
-				  <h2 class="title"> titre: Voluptatem info veritas </h2>
-				  <p class="annonce">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-					magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				  <h2 class="title"> Sujet: {{$annonce->sujet}} </h2>
+				  <p class="annonce"> {{$annonce->detail}} </p>
 				</div>
 			
 			  </div>
+			@endforeach
+			
 	</section>
 	<!--================ End Popular Causes Area =================-->
 	<!--================ start footer Area =================-->

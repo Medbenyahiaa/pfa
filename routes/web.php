@@ -1,5 +1,6 @@
 <?php
 
+use App\annonce;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -63,7 +64,10 @@ Route::view('/about','about')->name('about');
 Route::resource('/compte','CompteController');
 Route::resource('/annonce','Annonce\HomeAnnonceController');
 Route::get('/announce', function () {
-    return view('announce');
+    $annonces = annonce::all();
+    return view('announce' , [
+        'annonces' => $annonces ,
+    ]);
 });
 
 Route::get('/mess/{id}/{ben_mail}','Donateur\HomeDonateurController@messa');

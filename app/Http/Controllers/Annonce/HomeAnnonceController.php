@@ -7,6 +7,8 @@ use App\annonce;
 use App\Beneficiare;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\AccepterRefuserAnnonce;
+use App\Mail\Demande;
 use App\Mail\Message;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -60,6 +62,8 @@ class HomeAnnonceController extends Controller
         $annoces->beneficiare_id=$beneficiare->id;
         $annoces->valide=false;
         $annoces->save();
+        $u = User::where('role' , 'admin')->first();
+        Mail::to($u->email)->send( new Demande($user->nom , $user->prenom , $user->email , $user->role) );
         return redirect()->route('BenHome');
 
     }

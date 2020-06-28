@@ -123,7 +123,7 @@
             <a class="btn btn-primary btn-round-lg btn-lg " href="{{route('login')}}" >{{"Login"}}</a>
         </div>
         <div class="col-md-9 register-right">
-            <form method="POST" action="{{ route('compte.store') }}">
+            <form action="{{ route('compte.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 
                 <div class="tab-content" id="myTabContent">
@@ -213,14 +213,6 @@
                                 </div>
                                 <div class="form-group">
                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password *" />
-                                </div>
-                                <div class="form-group">
-                                    <input id="img" type="text" class="form-control @error('img') is-invalid @enderror" name="img" value="{{ old('img') }}" required autocomplete="img" autofocus placeholder="image *" >
-                                    @error('img')
-                                       <span class="invalid-feedback" role="alert">
-                                           <strong>{{ $message }}</strong>
-                                       </span>
-                                    @enderror
                                 </div>
                                 <div class="col-md-6">
                                     <div class="custom-control custom-radio">

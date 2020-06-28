@@ -53,7 +53,11 @@ Bonjour {{Auth::user()->nom}}
                         <td>{{$row->detail}}</td>
                         <td>{{$row->photo}}</td>
                         <td>
-                            <a href="/mess/{{$row->id}}/{{$user->email}}" class="btn btn-success">Contacter</a>
+                          <!--
+                          <a href="/mess/{{$row->id}}/{{$user->email}}" class="btn btn-success">Contacter</a>
+                          -->                          
+                           <a href="mailto:{{$user->email}} "class="btn btn-success" target="_blank">contacter</a>
+
                         </td>
                     </tr>  
                         @endif

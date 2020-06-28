@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Donateur;
 
 use App\annonce;
-use App\user;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
